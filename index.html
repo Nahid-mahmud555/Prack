@@ -1,468 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHERIS - Adaptive Cybernetic Synapse</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYBER ROBOT X</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            user-select: none;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Arial,sans-serif;
+}
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #05050a;
-            color: #ffffff;
-            scroll-behavior: smooth;
-        }
+body{
+    overflow:hidden;
+    background:#000;
+    color:white;
+}
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #05050a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #ff0055;
-            border-radius: 3px;
-        }
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+}
 
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
+.overlay{
+    position:absolute;
+    z-index:100;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:linear-gradient(
+        rgba(0,0,0,.2),
+        rgba(0,0,0,.4)
+    );
+}
 
-        .web-wrapper {
-            position: relative;
-            z-index: 2;
-            background: transparent;
-        }
+.logo{
+    font-size:5rem;
+    font-weight:900;
+    letter-spacing:4px;
+    color:#00ffff;
+    text-shadow:
+    0 0 10px #00ffff,
+    0 0 30px #00ffff,
+    0 0 60px #00ffff;
+}
 
-        /* Glassmorphic Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            background: rgba(5, 5, 10, 0.5);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+.subtitle{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#d9ffff;
+    max-width:700px;
+    line-height:1.7;
+}
 
-        .brand {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            font-size: 22px;
-            letter-spacing: 4px;
-            color: #fff;
-            background: linear-gradient(45deg, #ff0055, #00ffcc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+button{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    background:#00ffff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px cyan;
+}
 
-        nav ul li {
-            margin-left: 35px;
-        }
+.status{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#7ffcff;
+    font-size:.9rem;
+    opacity:.8;
+}
+</style>
 
-        nav ul li a {
-            color: #9aa0b0;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+<script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
 
-        nav ul li a:hover {
-            color: #00ffcc;
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 8%;
-            position: relative;
-        }
-
-        .glitch-title {
-            font-family: 'Syncopate', sans-serif;
-            font-size: clamp(40px, 6vw, 85px);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: #ffffff;
-        }
-
-        .glitch-title span {
-            color: transparent;
-            -webkit-text-stroke: 1.5px #ff0055;
-            position: relative;
-        }
-
-        .hero p {
-            font-size: clamp(16px, 2vw, 22px);
-            color: #8a92a6;
-            max-width: 650px;
-            line-height: 1.6;
-            margin-bottom: 45px;
-            font-weight: 300;
-        }
-
-        /* Futuristic Interactive Button */
-        .action-area {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-prime {
-            position: relative;
-            padding: 18px 40px;
-            background: transparent;
-            color: #00ffcc;
-            border: 1px solid #00ffcc;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: 0.5s;
-        }
-
-        .btn-prime::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.4), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-prime:hover::before {
-            left: 100%;
-        }
-
-        .btn-prime:hover {
-            background: #00ffcc;
-            color: #05050a;
-            box-shadow: 0 0 35px rgba(0, 255, 204, 0.5);
-            border-color: #00ffcc;
-        }
-
-        /* Sector Information Matrix */
-        .sectors-grid {
-            padding: 120px 8%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .sector-node {
-            background: rgba(10, 10, 22, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 45px;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sector-node:hover {
-            border-color: rgba(255, 0, 85, 0.4);
-            transform: translateY(-12px);
-            background: rgba(15, 15, 35, 0.6);
-            box-shadow: 0 20px 40px rgba(255, 0, 85, 0.05);
-        }
-
-        .sector-node::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff0055, #00ffcc);
-            transition: 0.5s;
-        }
-
-        .sector-node:hover::after {
-            width: 100%;
-        }
-
-        .node-id {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 14px;
-            color: #ff0055;
-            margin-bottom: 25px;
-            display: block;
-            letter-spacing: 2px;
-        }
-
-        .sector-node h3 {
-            font-size: 26px;
-            color: #ffffff;
-            margin-bottom: 18px;
-            font-weight: 500;
-            letter-spacing: -0.5px;
-        }
-
-        .sector-node p {
-            font-size: 16px;
-            color: #7e8696;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* Data Stream Counter Section */
-        .datastream {
-            padding: 60px 8%;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .stream-metric {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .metric-value {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 40px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .metric-label {
-            font-size: 13px;
-            text-transform: uppercase;
-            color: #525a6c;
-            letter-spacing: 2px;
-            margin-top: 5px;
-        }
-
-        footer {
-            padding: 40px 8%;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            text-align: center;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 11px;
-            color: #414754;
-            letter-spacing: 3px;
-        }
-
-        @media (max-width: 900px) {
-            header { padding: 20px 5%; }
-            .hero { padding: 0 5%; }
-            .sectors-grid { padding: 80px 5%; }
-            nav { display: none; }
-            .datastream { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
+<script type="importmap">
+{
+"imports":{
+"three":"https://unpkg.com/three@0.165.0/build/three.module.js"
+}
+}
+</script>
 </head>
+
 <body>
 
-    <div id="canvas-container"></div>
+<div class="overlay">
+    <div class="logo">CYBER ROBOT X</div>
 
-    <div class="web-wrapper">
-        <header>
-            <div class="brand">AETHERIS</div>
-            <nav>
-                <ul>
-                    <li><a href="#synapse">Synapse</a></li>
-                    <li><a href="#automata">Automata</a></li>
-                    <li><a href="#quantum">Quantum Matrix</a></li>
-                </ul>
-            </nav>
-        </header>
+    <p class="subtitle">
+        Advanced Autonomous Intelligence Interface.
+        A futuristic robotic visualization powered by
+        real-time 3D rendering technology.
+    </p>
 
-        <section class="hero">
-            <h1 class="glitch-title">Quantum AI<br><span>Mechanisms</span></h1>
-            <p>Deploying deep-level geometric tensor processing nodes alongside intelligent synthetic neural pathways to fundamentally orchestrate the next global grid of autonomous systems.</p>
-            <div class="action-area">
-                <button class="btn-prime" onclick="triggerGrid()">Engage Core Matrix</button>
-            </div>
-        </section>
+    <button onclick="alert('System Activated 🤖')">
+        INITIALIZE SYSTEM
+    </button>
 
-        <section class="sectors-grid" id="synapse">
-            <div class="sector-node">
-                <span class="node-id">[ NODE // 01 ]</span>
-                <h3>Geometric Tensors</h3>
-                <p>Advanced algorithmic frameworks built to analyze high-dimensional relational vector spaces instantly, establishing lightning-fast contextual inference matrix maps.</p>
-            </div>
-
-            <div class="sector-node" id="automata">
-                <span class="node-id">[ NODE // 02 ]</span>
-                <h3>Kinetic Automata</h3>
-                <p>Autonomous bio-mimetic machinery designed with highly precise, low-latency micro-actuator loops for smooth navigation in unpredictable, dynamic real-world grids.</p>
-            </div>
-
-            <div class="sector-node" id="quantum">
-                <span class="node-id">[ NODE // 03 ]</span>
-                <h3>Neural Synaptic Grid</h3>
-                <p>A completely decentralized deep learning lattice structure designed for fluid, self-correcting cross-node telemetry updates without centralized oversight pipelines.</p>
-            </div>
-        </section>
-
-        <section class="datastream">
-            <div class="stream-metric">
-                <div class="metric-value">99.84%</div>
-                <div class="metric-label">Synapse Synchronization</div>
-            </div>
-            <div class="stream-metric">
-                <div class="metric-value">4,096 TFLOPS</div>
-                <div class="metric-label">Core Pipeline Velocity</div>
-            </div>
-            <div class="stream-metric">
-                <div class="metric-value">ACTIVE</div>
-                <div class="metric-label">Decentralized Autonomous Mesh</div>
-            </div>
-        </section>
-
-        <footer>
-            TERMINAL STATUS: NOMINAL // OMNI-GRID SYNAPSE ENGINE v9.0.1 // CC 2026
-        </footer>
+    <div class="status">
+        STATUS • ONLINE • AI CORE ACTIVE
     </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<canvas id="bg"></canvas>
 
-    <script>
-        // --- MULTI-AXIS VECTOR GRID 3D SIMULATION ---
-        const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
-        
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 60;
+<script type="module">
+import * as THREE from "three";
 
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
 
-        // Generative Wave Constellation
-        const particleCount = 700;
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
 
-        for(let i = 0; i < particleCount * 3; i += 3) {
-            positions[i] = (Math.random() - 0.5) * 140;     // X Axis
-            positions[i+1] = (Math.random() - 0.5) * 140;   // Y Axis
-            positions[i+2] = (Math.random() - 0.5) * 140;   // Z Axis
-        }
+const renderer = new THREE.WebGLRenderer({
+canvas:document.querySelector("#bg"),
+antialias:true
+});
 
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
 
-        // Neo-Cyan Glowing Particles
-        const material = new THREE.PointsMaterial({
-            color: 0x00ffcc,
-            size: 0.55,
-            transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending
-        });
+renderer.setPixelRatio(window.devicePixelRatio);
 
-        const particleSystem = new THREE.Points(geometry, material);
-        scene.add(particleSystem);
+camera.position.z = 8;
 
-        // Grid Geometric Overlay Lines
-        const gridGeo = new THREE.IcosahedronGeometry(35, 2);
-        const gridMat = new THREE.MeshBasicMaterial({
-            color: 0xff0055,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.05
-        });
-        const outerMesh = new THREE.Mesh(gridGeo, gridMat);
-        scene.add(outerMesh);
+/* LIGHTS */
 
-        // Parallax Vector Mapping
-        let targetX = 0, targetY = 0;
-        window.addEventListener('mousemove', (event) => {
-            targetX = (event.clientX - window.innerWidth / 2) * 0.03;
-            targetY = (event.clientY - window.innerHeight / 2) * 0.03;
-        });
+const pointLight = new THREE.PointLight(
+0x00ffff,
+5
+);
 
-        // Procedural Animation Loop
-        let clock = new THREE.Clock();
+pointLight.position.set(
+5,
+5,
+5
+);
 
-        const tick = () => {
-            const elapsedTime = clock.getElapsedTime();
+scene.add(pointLight);
 
-            // Rotations
-            particleSystem.rotation.y = elapsedTime * 0.03;
-            particleSystem.rotation.x = elapsedTime * 0.015;
-            outerMesh.rotation.y = -elapsedTime * 0.02;
+scene.add(
+new THREE.AmbientLight(
+0xffffff,
+1
+)
+);
 
-            // Smooth Interpolation (Lerp) for Mouse Movements
-            particleSystem.position.x += (targetX - particleSystem.position.x) * 0.05;
-            particleSystem.position.y += (-targetY - particleSystem.position.y) * 0.05;
-            outerMesh.position.x += (targetX - outerMesh.position.x) * 0.05;
-            outerMesh.position.y += (-targetY - outerMesh.position.y) * 0.05;
+/* ROBOT HEAD */
 
-            renderer.render(scene, camera);
-            window.requestAnimationFrame(tick);
-        };
-        tick();
+const head = new THREE.Mesh(
+new THREE.BoxGeometry(2,2,2),
+new THREE.MeshStandardMaterial({
+color:0x101010,
+emissive:0x00ffff,
+emissiveIntensity:.4
+})
+);
 
-        // Responsive System Config
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+scene.add(head);
 
-        // UI Core Trigger Interactive Action
-        function triggerGrid() {
-            gsap.to(camera.position, { z: 40, duration: 1, ease: "power2.out", yoyo: true, repeat: 1 });
-            gsap.fromTo(".sector-node", 
-                { borderColor: "rgba(0, 255, 204, 0.8)" }, 
-                { borderColor: "rgba(255, 255, 255, 0.03)", duration: 1.5 }
-            );
-        }
+/* EYES */
 
-        // GSAP Core Structural Orchestration
-        gsap.from(".glitch-title", { duration: 1.8, opacity: 0, y: 70, ease: "power4.out" });
-        gsap.from(".hero p", { duration: 1.8, opacity: 0, y: 40, delay: 0.3, ease: "power4.out" });
-        gsap.from(".btn-prime", { duration: 1.4, opacity: 0, delay: 0.6, ease: "power3.out" });
-    </script>
+const eyeMaterial =
+new THREE.MeshBasicMaterial({
+color:0x00ffff
+});
+
+const eye1 = new THREE.Mesh(
+new THREE.SphereGeometry(.15,32,32),
+eyeMaterial
+);
+
+eye1.position.set(-0.5,0.2,1.05);
+
+const eye2 = eye1.clone();
+eye2.position.x = 0.5;
+
+scene.add(eye1);
+scene.add(eye2);
+
+/* BODY */
+
+const body = new THREE.Mesh(
+new THREE.BoxGeometry(
+2.5,
+3,
+1.5
+),
+new THREE.MeshStandardMaterial({
+color:0x181818,
+emissive:0x00ffff,
+emissiveIntensity:.2
+})
+);
+
+body.position.y = -3;
+
+scene.add(body);
+
+/* STARS */
+
+for(let i=0;i<600;i++){
+
+const star = new THREE.Mesh(
+new THREE.SphereGeometry(.03),
+new THREE.MeshBasicMaterial({
+color:0xffffff
+})
+);
+
+star.position.set(
+(Math.random()-0.5)*60,
+(Math.random()-0.5)*60,
+(Math.random()-0.5)*60
+);
+
+scene.add(star);
+}
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+head.rotation.y += 0.01;
+body.rotation.y += 0.008;
+
+eye1.scale.y =
+1 + Math.sin(Date.now()*0.005)*0.2;
+
+eye2.scale.y =
+1 + Math.sin(Date.now()*0.005)*0.2;
+
+renderer.render(scene,camera);
+}
+
+animate();
+
+window.addEventListener("resize",()=>{
+
+camera.aspect =
+window.innerWidth/window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+});
+</script>
+
 </body>
 </html>
