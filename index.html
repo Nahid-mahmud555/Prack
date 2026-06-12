@@ -3,124 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoboVerse AI</title>
+<title>RoboGenesis X</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#050816;color:#fff;overflow-x:hidden}
-#bg{position:fixed;inset:0;z-index:-1}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:18px 6%;
-background:rgba(0,0,0,.35);backdrop-filter:blur(10px);z-index:99}
-nav a{color:#fff;text-decoration:none;margin-left:18px}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
-.hero h1{font-size:4rem;background:linear-gradient(90deg,#00e5ff,#4f7cff);-webkit-background-clip:text;color:transparent}
-.hero p{max-width:800px;margin-top:20px;color:#cfcfcf}
-.btn{padding:14px 24px;border-radius:30px;border:none;margin:10px;cursor:pointer}
-.primary{background:#00e5ff}
-.secondary{background:transparent;color:#00e5ff;border:1px solid #00e5ff}
-section{padding:90px 8%}
-h2{text-align:center;color:#00e5ff;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:rgba(255,255,255,.06);padding:24px;border-radius:18px;border:1px solid rgba(255,255,255,.08)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
-.stat{text-align:center;background:rgba(255,255,255,.06);padding:25px;border-radius:18px}
-.stat h3{font-size:2.4rem;color:#00e5ff}
-footer{text-align:center;padding:40px;color:#aaa}
-input,textarea{width:100%;padding:14px;margin:8px 0;background:#101828;border:1px solid #243042;color:white;border-radius:10px}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+background:
+radial-gradient(circle at center,#0d1b3d,#050816);
+}
+
+.hero h1{
+font-size:5rem;
+max-width:1000px;
+background:linear-gradient(90deg,#00e5ff,#4f7cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.3rem;
+max-width:700px;
+color:#b8b8b8;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+background:#00e5ff;
+color:black;
+border:none;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.robot{
+width:300px;
+height:300px;
+border-radius:50%;
+margin-bottom:30px;
+
+background:
+radial-gradient(circle,#00e5ff,#0066ff);
+
+animation:float 4s ease-in-out infinite;
+box-shadow:
+0 0 40px #00e5ff,
+0 0 80px #0066ff;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+100%{transform:translateY(0)}
+}
+
+.section{
+padding:100px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#00e5ff;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+color:#00e5ff;
+font-size:3rem;
+}
+
 </style>
+
 </head>
 <body>
-<div id="bg"></div>
-<nav>
-<div><b>🤖 RoboVerse AI</b></div>
-<div>
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
 
 <section class="hero">
-<h1>Building The Future With Robotics & AI</h1>
-<p>Advanced robotics, computer vision, autonomous systems, industrial automation and intelligent machines.</p>
-<div>
-<button class="btn primary">Explore</button>
-<button class="btn secondary">Research</button>
+
+<div class="robot"></div>
+
+<h1>
+THE AGE OF PHYSICAL AI
+HAS BEGUN
+</h1>
+
+<p>
+Building intelligent robots that can
+see, think, learn and act autonomously.
+</p>
+
+<button class="btn">
+Explore Platform
+</button>
+
+</section>
+
+<section class="section">
+
+<h2>Robot Brain</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Vision AI</h3>
+<p>Advanced perception system.</p>
 </div>
+
+<div class="card">
+<h3>Decision Engine</h3>
+<p>Autonomous reasoning module.</p>
+</div>
+
+<div class="card">
+<h3>Memory System</h3>
+<p>Long-term contextual memory.</p>
+</div>
+
+<div class="card">
+<h3>Motion Planning</h3>
+<p>Path and movement generation.</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="about">
-<h2>About</h2>
-<div class="card">RoboVerse AI is a futuristic robotics laboratory concept focused on AI-powered robots, drones, computer vision, autonomous navigation and human-robot collaboration.</div>
-</section>
+<section class="section">
 
-<section id="research">
 <h2>Research Areas</h2>
-<div class="grid">
-<div class="card">Autonomous Navigation</div>
+
+<div class="cards">
+
+<div class="card">Embodied AI</div>
+
+<div class="card">Humanoid Robotics</div>
+
 <div class="card">Computer Vision</div>
-<div class="card">Swarm Robotics</div>
-<div class="card">Industrial Automation</div>
-<div class="card">AI Control Systems</div>
-<div class="card">Human Robot Interaction</div>
+
+<div class="card">Swarm Intelligence</div>
+
+<div class="card">Robot Learning</div>
+
+<div class="card">Multi-Agent Systems</div>
+
 </div>
+
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="grid">
-<div class="card"><h3>Humanoid Robot</h3><p>Interactive AI-powered assistant robot.</p></div>
-<div class="card"><h3>Warehouse Bot</h3><p>Inventory and logistics automation.</p></div>
-<div class="card"><h3>Smart Drone</h3><p>Autonomous aerial monitoring.</p></div>
-<div class="card"><h3>Vision Robot</h3><p>Object detection and tracking.</p></div>
+<section class="section">
+
+<h2>Future Roadmap</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>2026</h3>
+<p>Prototype</p>
 </div>
-</section>
 
-<section>
-<h2>Statistics</h2>
-<div class="stats">
-<div class="stat"><h3>20+</h3><p>Projects</p></div>
-<div class="stat"><h3>5+</h3><p>Papers</p></div>
-<div class="stat"><h3>1000+</h3><p>Hours</p></div>
-<div class="stat"><h3>10+</h3><p>Modules</p></div>
+<div class="card">
+<h3>2027</h3>
+<p>Field Testing</p>
 </div>
+
+<div class="card">
+<h3>2028</h3>
+<p>Commercial Launch</p>
+</div>
+
+<div class="card">
+<h3>2030</h3>
+<p>Global Deployment</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<input placeholder="Name">
-<input placeholder="Email">
-<textarea rows="5" placeholder="Message"></textarea>
-<button class="btn primary">Send Message</button>
-</section>
-
-<footer>© 2026 RoboVerse AI</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,.1,1000);
-const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
-renderer.setSize(innerWidth,innerHeight);
-document.getElementById('bg').appendChild(renderer.domElement);
-
-const geo=new THREE.TorusKnotGeometry(1,.35,200,32);
-const mat=new THREE.MeshStandardMaterial({color:0x00e5ff,metalness:1,roughness:.2});
-const mesh=new THREE.Mesh(geo,mat);
-scene.add(mesh);
-
-const l1=new THREE.PointLight(0x00e5ff,3); l1.position.set(4,4,4); scene.add(l1);
-const l2=new THREE.PointLight(0x4f7cff,3); l2.position.set(-4,-4,4); scene.add(l2);
-camera.position.z=4;
-
-function animate(){
- requestAnimationFrame(animate);
- mesh.rotation.x+=0.004;
- mesh.rotation.y+=0.007;
- renderer.render(scene,camera);
-}
-animate();
-onresize=()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)}
-</script>
 </body>
 </html>
