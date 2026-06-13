@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoboGenesis X</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RobotOS Nexus</title>
 
 <style>
 
@@ -13,7 +11,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Orbitron',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
@@ -22,69 +20,78 @@ color:white;
 overflow-x:hidden;
 }
 
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.robot-core{
+width:220px;
+height:220px;
+border-radius:50%;
 background:
-radial-gradient(circle at center,#0d1b3d,#050816);
+radial-gradient(circle,#00e5ff,#005eff);
+box-shadow:
+0 0 50px #00e5ff,
+0 0 120px #005eff;
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.08);
+}
 }
 
 .hero h1{
-font-size:5rem;
-max-width:1000px;
-background:linear-gradient(90deg,#00e5ff,#4f7cff);
+font-size:4rem;
+margin-top:30px;
+background:linear-gradient(90deg,#00e5ff,#6b7cff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:20px;
-font-size:1.3rem;
 max-width:700px;
-color:#b8b8b8;
-}
-
-.btn{
-margin-top:30px;
-padding:15px 35px;
-background:#00e5ff;
-color:black;
-border:none;
-border-radius:50px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.robot{
-width:300px;
-height:300px;
-border-radius:50%;
-margin-bottom:30px;
-
-background:
-radial-gradient(circle,#00e5ff,#0066ff);
-
-animation:float 4s ease-in-out infinite;
-box-shadow:
-0 0 40px #00e5ff,
-0 0 80px #0066ff;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0)}
+margin-top:20px;
+color:#ccc;
 }
 
 .section{
-padding:100px 10%;
+padding:100px 8%;
 }
 
-.cards{
+.title{
+font-size:3rem;
+text-align:center;
+margin-bottom:40px;
+color:#00e5ff;
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
@@ -104,62 +111,83 @@ transform:translateY(-10px);
 border-color:#00e5ff;
 }
 
-h2{
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.stat{
+padding:30px;
 text-align:center;
-margin-bottom:40px;
-color:#00e5ff;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+}
+
+.stat h2{
 font-size:3rem;
+color:#00e5ff;
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#888;
 }
 
 </style>
-
 </head>
+
 <body>
+
+<nav>
+<div><b>🤖 RobotOS Nexus</b></div>
+
+<div>
+<a href="#">Home</a>
+<a href="#">Research</a>
+<a href="#">Fleet</a>
+<a href="#">Contact</a>
+</div>
+</nav>
 
 <section class="hero">
 
-<div class="robot"></div>
+<div class="robot-core"></div>
 
-<h1>
-THE AGE OF PHYSICAL AI
-HAS BEGUN
-</h1>
+<h1>ROBOT OPERATING FUTURE</h1>
 
 <p>
-Building intelligent robots that can
-see, think, learn and act autonomously.
+Train. Monitor. Deploy.
+The next generation robotics intelligence platform.
 </p>
-
-<button class="btn">
-Explore Platform
-</button>
 
 </section>
 
 <section class="section">
 
-<h2>Robot Brain</h2>
+<h2 class="title">AI Core Modules</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
 <h3>Vision AI</h3>
-<p>Advanced perception system.</p>
+<p>Object detection and perception.</p>
 </div>
 
 <div class="card">
-<h3>Decision Engine</h3>
-<p>Autonomous reasoning module.</p>
+<h3>Motion Engine</h3>
+<p>Autonomous movement system.</p>
 </div>
 
 <div class="card">
-<h3>Memory System</h3>
-<p>Long-term contextual memory.</p>
+<h3>Decision Brain</h3>
+<p>Real-time reasoning engine.</p>
 </div>
 
 <div class="card">
-<h3>Motion Planning</h3>
-<p>Path and movement generation.</p>
+<h3>Memory Layer</h3>
+<p>Persistent robot knowledge.</p>
 </div>
 
 </div>
@@ -168,21 +196,25 @@ Explore Platform
 
 <section class="section">
 
-<h2>Research Areas</h2>
+<h2 class="title">Robot Fleet</h2>
 
-<div class="cards">
+<div class="grid">
 
-<div class="card">Embodied AI</div>
+<div class="card">
+🤖 Humanoid Unit
+</div>
 
-<div class="card">Humanoid Robotics</div>
+<div class="card">
+🚁 Drone Fleet
+</div>
 
-<div class="card">Computer Vision</div>
+<div class="card">
+🏭 Factory Bot
+</div>
 
-<div class="card">Swarm Intelligence</div>
-
-<div class="card">Robot Learning</div>
-
-<div class="card">Multi-Agent Systems</div>
+<div class="card">
+🚚 Delivery Robot
+</div>
 
 </div>
 
@@ -190,33 +222,39 @@ Explore Platform
 
 <section class="section">
 
-<h2>Future Roadmap</h2>
+<h2 class="title">System Statistics</h2>
 
-<div class="cards">
+<div class="stats">
 
-<div class="card">
-<h3>2026</h3>
-<p>Prototype</p>
+<div class="stat">
+<h2>128</h2>
+<p>Robots Online</p>
 </div>
 
-<div class="card">
-<h3>2027</h3>
-<p>Field Testing</p>
+<div class="stat">
+<h2>99.8%</h2>
+<p>Success Rate</p>
 </div>
 
-<div class="card">
-<h3>2028</h3>
-<p>Commercial Launch</p>
+<div class="stat">
+<h2>24/7</h2>
+<p>Monitoring</p>
 </div>
 
-<div class="card">
-<h3>2030</h3>
-<p>Global Deployment</p>
+<div class="stat">
+<h2>5M+</h2>
+<p>Tasks Completed</p>
 </div>
 
 </div>
 
 </section>
+
+<footer>
+
+RobotOS Nexus © 2026
+
+</footer>
 
 </body>
 </html>
