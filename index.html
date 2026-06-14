@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>RobotOS Nexus</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>MissionControl AI</title>
 
 <style>
 
@@ -15,30 +16,12 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#050816;
+background:#040812;
 color:white;
 overflow-x:hidden;
 }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-background:rgba(0,0,0,.4);
-backdrop-filter:blur(10px);
-z-index:100;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
-
-.hero{
+header{
 height:100vh;
 display:flex;
 flex-direction:column;
@@ -48,52 +31,63 @@ text-align:center;
 padding:20px;
 }
 
-.robot-core{
+.logo{
 width:220px;
 height:220px;
 border-radius:50%;
 background:
-radial-gradient(circle,#00e5ff,#005eff);
+conic-gradient(
+#00e5ff,
+#0066ff,
+#7b61ff,
+#00e5ff
+);
+
+animation:spin 8s linear infinite;
 box-shadow:
 0 0 50px #00e5ff,
-0 0 120px #005eff;
-animation:pulse 3s infinite;
+0 0 100px #0066ff;
 }
 
-@keyframes pulse{
-50%{
-transform:scale(1.08);
+@keyframes spin{
+100%{
+transform:rotate(360deg);
 }
 }
 
-.hero h1{
-font-size:4rem;
-margin-top:30px;
-background:linear-gradient(90deg,#00e5ff,#6b7cff);
+h1{
+font-size:5rem;
+margin-top:40px;
+background:linear-gradient(
+90deg,
+#00e5ff,
+#7b61ff
+);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-max-width:700px;
+p{
 margin-top:20px;
-color:#ccc;
+max-width:700px;
+color:#aaa;
 }
 
-.section{
+section{
 padding:100px 8%;
 }
 
 .title{
-font-size:3rem;
 text-align:center;
+font-size:3rem;
 margin-bottom:40px;
 color:#00e5ff;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
@@ -101,8 +95,8 @@ gap:20px;
 padding:25px;
 border-radius:20px;
 background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
 transition:.3s;
 }
 
@@ -111,28 +105,16 @@ transform:translateY(-10px);
 border-color:#00e5ff;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.stat{
-padding:30px;
-text-align:center;
-background:rgba(255,255,255,.05);
-border-radius:20px;
-}
-
-.stat h2{
+.metric{
 font-size:3rem;
 color:#00e5ff;
+font-weight:bold;
 }
 
 footer{
 padding:40px;
 text-align:center;
-color:#888;
+color:#777;
 }
 
 </style>
@@ -140,110 +122,111 @@ color:#888;
 
 <body>
 
-<nav>
-<div><b>🤖 RobotOS Nexus</b></div>
+<header>
 
-<div>
-<a href="#">Home</a>
-<a href="#">Research</a>
-<a href="#">Fleet</a>
-<a href="#">Contact</a>
-</div>
-</nav>
+<div class="logo"></div>
 
-<section class="hero">
-
-<div class="robot-core"></div>
-
-<h1>ROBOT OPERATING FUTURE</h1>
+<h1>MISSIONCONTROL AI</h1>
 
 <p>
-Train. Monitor. Deploy.
-The next generation robotics intelligence platform.
+Command autonomous robots,
+monitor fleets,
+simulate missions,
+and deploy intelligence.
 </p>
 
-</section>
+</header>
 
-<section class="section">
+<section>
 
-<h2 class="title">AI Core Modules</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Vision AI</h3>
-<p>Object detection and perception.</p>
-</div>
-
-<div class="card">
-<h3>Motion Engine</h3>
-<p>Autonomous movement system.</p>
-</div>
-
-<div class="card">
-<h3>Decision Brain</h3>
-<p>Real-time reasoning engine.</p>
-</div>
-
-<div class="card">
-<h3>Memory Layer</h3>
-<p>Persistent robot knowledge.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Robot Fleet</h2>
+<h2 class="title">
+Mission Modules
+</h2>
 
 <div class="grid">
 
 <div class="card">
-🤖 Humanoid Unit
+🚀 Mission Planner
 </div>
 
 <div class="card">
-🚁 Drone Fleet
+🤖 Fleet Manager
 </div>
 
 <div class="card">
-🏭 Factory Bot
+🧠 AI Core
 </div>
 
 <div class="card">
-🚚 Delivery Robot
+🌐 Digital Twin
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section>
 
-<h2 class="title">System Statistics</h2>
+<h2 class="title">
+Robot Fleet
+</h2>
 
-<div class="stats">
+<div class="grid">
 
-<div class="stat">
-<h2>128</h2>
-<p>Robots Online</p>
+<div class="card">
+Humanoid Unit
 </div>
 
-<div class="stat">
-<h2>99.8%</h2>
-<p>Success Rate</p>
+<div class="card">
+Industrial Robot
 </div>
 
-<div class="stat">
-<h2>24/7</h2>
-<p>Monitoring</p>
+<div class="card">
+Drone Squadron
 </div>
 
-<div class="stat">
-<h2>5M+</h2>
-<p>Tasks Completed</p>
+<div class="card">
+Autonomous Rover
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Analytics Dashboard
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="metric">
+98%
+</div>
+Mission Success
+</div>
+
+<div class="card">
+<div class="metric">
+154
+</div>
+Robots Online
+</div>
+
+<div class="card">
+<div class="metric">
+24/7
+</div>
+Monitoring
+</div>
+
+<div class="card">
+<div class="metric">
+5.2M
+</div>
+Tasks Completed
 </div>
 
 </div>
@@ -252,7 +235,7 @@ The next generation robotics intelligence platform.
 
 <footer>
 
-RobotOS Nexus © 2026
+MissionControl AI © 2026
 
 </footer>
 
