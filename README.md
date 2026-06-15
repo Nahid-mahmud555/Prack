@@ -1,33 +1,25 @@
-# MissionControl AI
+# TwinSphere Robotics
 
-Command. Simulate. Deploy.
-
-MissionControl AI is a futuristic robotics command platform
-for managing autonomous robots, simulation environments,
-and AI-powered robotic missions.
+Every Robot Has A Digital Soul
 
 ---
 
-## Features
+## Overview
 
-- Robotics Command Center UI
+TwinSphere Robotics is a futuristic digital twin platform
+for robotics simulation, AI training, fleet monitoring,
+and autonomous deployment.
+
+---
+
+## Core Features
+
 - Digital Twin Dashboard
-- Robot Fleet Monitoring
-- Mission Planning
-- AI Analytics
-- Simulation Environment
-- Glassmorphism Interface
-
----
-
-## Modules
-
-- Mission Control
+- AI Training Environment
 - Fleet Management
-- AI Core
-- Digital Twin
-- Research Hub
-- Analytics Dashboard
+- Simulation Hub
+- Real-Time Monitoring
+- Research Showcase
 
 ---
 
@@ -41,21 +33,39 @@ Frontend:
 Future:
 - Three.js
 - ROS2
-- WebSockets
 - TensorFlow
+- NVIDIA Isaac Sim
 
 ---
 
-## Future Updates
+## Modules
 
-- Real Robot Integration
-- ROS Dashboard
-- Multi-Agent Simulation
-- Live Telemetry
-- AI Assistant
+- Twin Network
+- Fleet Universe
+- AI Simulation Hub
+- Reality Sync
+- Research Center
+
+---
+
+## Future Roadmap
+
+- Live Robot Telemetry
+- Multi-Robot Control
+- Cloud Robotics
+- Physical AI Integration
+- Autonomous Deployment
 
 ---
 
 ## License
 
 MIT License
+
+---
+
+TwinSphere Robotics
+
+Train Virtually.
+Deploy Physically.
+Scale Globally.
