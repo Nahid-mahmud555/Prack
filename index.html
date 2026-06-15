@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>MissionControl AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TwinSphere Robotics</title>
 
 <style>
 
@@ -12,16 +11,16 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Segoe UI,sans-serif;
 }
 
 body{
-background:#040812;
+background:#030712;
 color:white;
 overflow-x:hidden;
 }
 
-header{
+.hero{
 height:100vh;
 display:flex;
 flex-direction:column;
@@ -31,46 +30,37 @@ text-align:center;
 padding:20px;
 }
 
-.logo{
-width:220px;
-height:220px;
+.orb{
+width:260px;
+height:260px;
 border-radius:50%;
 background:
-conic-gradient(
-#00e5ff,
-#0066ff,
-#7b61ff,
-#00e5ff
-);
-
-animation:spin 8s linear infinite;
+radial-gradient(circle,#00F5FF,#7B61FF);
 box-shadow:
-0 0 50px #00e5ff,
-0 0 100px #0066ff;
+0 0 50px #00F5FF,
+0 0 120px #7B61FF;
+animation:float 4s ease-in-out infinite;
 }
 
-@keyframes spin{
-100%{
-transform:rotate(360deg);
+@keyframes float{
+50%{
+transform:translateY(-25px);
 }
 }
 
-h1{
+.hero h1{
 font-size:5rem;
-margin-top:40px;
-background:linear-gradient(
-90deg,
-#00e5ff,
-#7b61ff
-);
+margin-top:30px;
+background:linear-gradient(90deg,#00F5FF,#7B61FF);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-p{
+.hero p{
+max-width:800px;
 margin-top:20px;
-max-width:700px;
-color:#aaa;
+color:#bdbdbd;
+font-size:1.2rem;
 }
 
 section{
@@ -78,87 +68,146 @@ padding:100px 8%;
 }
 
 .title{
-text-align:center;
 font-size:3rem;
+text-align:center;
 margin-bottom:40px;
-color:#00e5ff;
+color:#00F5FF;
 }
 
 .grid{
 display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
+background:rgba(255,255,255,.05);
 padding:25px;
 border-radius:20px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
 backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.1);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-border-color:#00e5ff;
+border-color:#00F5FF;
+}
+
+.flow{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+font-size:1.2rem;
+}
+
+.node{
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,.05);
 }
 
 .metric{
 font-size:3rem;
-color:#00e5ff;
+color:#22FF88;
 font-weight:bold;
 }
 
 footer{
 padding:40px;
 text-align:center;
-color:#777;
+color:#888;
 }
 
 </style>
 </head>
-
 <body>
 
-<header>
+<section class="hero">
 
-<div class="logo"></div>
+<div class="orb"></div>
 
-<h1>MISSIONCONTROL AI</h1>
+<h1>TWINSPHERE</h1>
 
 <p>
-Command autonomous robots,
-monitor fleets,
-simulate missions,
-and deploy intelligence.
+Every Robot Has A Digital Soul.
+Train In Simulation. Deploy In Reality.
 </p>
 
-</header>
+</section>
 
 <section>
 
-<h2 class="title">
-Mission Modules
-</h2>
+<h2 class="title">Twin Network</h2>
+
+<div class="flow">
+
+<div class="node">🤖 Physical Robot</div>
+
+<div>→</div>
+
+<div class="node">🌐 Digital Twin</div>
+
+<div>→</div>
+
+<div class="node">🧠 AI Training</div>
+
+<div>→</div>
+
+<div class="node">🚀 Deployment</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Fleet Universe</h2>
+
+<div class="grid">
+
+<div class="card">🤖 Humanoid Twin</div>
+
+<div class="card">🚁 Drone Twin</div>
+
+<div class="card">🏭 Factory Twin</div>
+
+<div class="card">📦 Warehouse Twin</div>
+
+<div class="card">🏥 Medical Twin</div>
+
+<div class="card">🛰 Rover Twin</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">AI Simulation Hub</h2>
 
 <div class="grid">
 
 <div class="card">
-🚀 Mission Planner
+<div class="metric">10K+</div>
+Virtual Missions
 </div>
 
 <div class="card">
-🤖 Fleet Manager
+<div class="metric">500+</div>
+Robots
 </div>
 
 <div class="card">
-🧠 AI Core
+<div class="metric">98%</div>
+Accuracy
 </div>
 
 <div class="card">
-🌐 Digital Twin
+<div class="metric">24/7</div>
+Training
 </div>
 
 </div>
@@ -167,67 +216,21 @@ Mission Modules
 
 <section>
 
-<h2 class="title">
-Robot Fleet
-</h2>
+<h2 class="title">Research Areas</h2>
 
 <div class="grid">
 
-<div class="card">
-Humanoid Unit
-</div>
+<div class="card">Digital Twins</div>
 
-<div class="card">
-Industrial Robot
-</div>
+<div class="card">Embodied AI</div>
 
-<div class="card">
-Drone Squadron
-</div>
+<div class="card">Physical AI</div>
 
-<div class="card">
-Autonomous Rover
-</div>
+<div class="card">Robot Intelligence</div>
 
-</div>
+<div class="card">Simulation Learning</div>
 
-</section>
-
-<section>
-
-<h2 class="title">
-Analytics Dashboard
-</h2>
-
-<div class="grid">
-
-<div class="card">
-<div class="metric">
-98%
-</div>
-Mission Success
-</div>
-
-<div class="card">
-<div class="metric">
-154
-</div>
-Robots Online
-</div>
-
-<div class="card">
-<div class="metric">
-24/7
-</div>
-Monitoring
-</div>
-
-<div class="card">
-<div class="metric">
-5.2M
-</div>
-Tasks Completed
-</div>
+<div class="card">Multi-Agent Systems</div>
 
 </div>
 
@@ -235,7 +238,11 @@ Tasks Completed
 
 <footer>
 
-MissionControl AI © 2026
+TwinSphere Robotics © 2026
+
+<br><br>
+
+Train Virtually • Deploy Physically • Scale Globally
 
 </footer>
 
