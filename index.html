@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TwinSphere Robotics</title>
+<title>NeuroGrid Robotics</title>
 
 <style>
 
@@ -11,11 +11,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#030712;
+background:#020617;
 color:white;
 overflow-x:hidden;
 }
@@ -28,39 +28,70 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+position:relative;
 }
 
-.orb{
-width:260px;
-height:260px;
+.network{
+position:absolute;
+width:500px;
+height:500px;
 border-radius:50%;
-background:
-radial-gradient(circle,#00F5FF,#7B61FF);
-box-shadow:
-0 0 50px #00F5FF,
-0 0 120px #7B61FF;
-animation:float 4s ease-in-out infinite;
+border:2px solid rgba(0,255,255,.2);
+animation:spin 20s linear infinite;
 }
 
-@keyframes float{
-50%{
-transform:translateY(-25px);
+.network::before,
+.network::after{
+content:"";
+position:absolute;
+width:20px;
+height:20px;
+background:#00F5FF;
+border-radius:50%;
+box-shadow:0 0 20px #00F5FF;
+}
+
+.network::before{
+top:40px;
+left:50%;
+}
+
+.network::after{
+bottom:40px;
+left:20%;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
 }
 }
 
 .hero h1{
 font-size:5rem;
-margin-top:30px;
+z-index:2;
 background:linear-gradient(90deg,#00F5FF,#7B61FF);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-max-width:800px;
 margin-top:20px;
-color:#bdbdbd;
+max-width:700px;
 font-size:1.2rem;
+color:#cfcfcf;
+z-index:2;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#00F5FF;
+font-weight:bold;
+cursor:pointer;
+z-index:2;
 }
 
 section{
@@ -81,9 +112,9 @@ gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,.05);
 padding:25px;
 border-radius:20px;
+background:rgba(255,255,255,.05);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,.1);
 transition:.3s;
@@ -94,25 +125,35 @@ transform:translateY(-10px);
 border-color:#00F5FF;
 }
 
-.flow{
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+padding:30px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+}
+
+.stat h2{
+font-size:3rem;
+color:#22FF88;
+}
+
+.timeline{
 display:flex;
 justify-content:center;
-align-items:center;
 gap:20px;
 flex-wrap:wrap;
-font-size:1.2rem;
 }
 
 .node{
 padding:20px;
-border-radius:15px;
 background:rgba(255,255,255,.05);
-}
-
-.metric{
-font-size:3rem;
-color:#22FF88;
-font-weight:bold;
+border-radius:15px;
 }
 
 footer{
@@ -123,40 +164,43 @@ color:#888;
 
 </style>
 </head>
+
 <body>
 
 <section class="hero">
 
-<div class="orb"></div>
+<div class="network"></div>
 
-<h1>TWINSPHERE</h1>
+<h1>NEUROGRID</h1>
 
 <p>
-Every Robot Has A Digital Soul.
-Train In Simulation. Deploy In Reality.
+The World's First Connected Robotics Network.
+Think Together. Learn Together. Work Together.
 </p>
 
+<button class="btn">
+Join Network
+</button>
+
 </section>
 
 <section>
 
-<h2 class="title">Twin Network</h2>
+<h2 class="title">
+AI Network Architecture
+</h2>
 
-<div class="flow">
+<div class="timeline">
 
-<div class="node">🤖 Physical Robot</div>
+<div class="node">🤖 Robot A</div>
 
-<div>→</div>
+<div class="node">🤖 Robot B</div>
 
-<div class="node">🌐 Digital Twin</div>
+<div class="node">🧠 AI Cloud</div>
 
-<div>→</div>
+<div class="node">🤖 Robot C</div>
 
-<div class="node">🧠 AI Training</div>
-
-<div>→</div>
-
-<div class="node">🚀 Deployment</div>
+<div class="node">🤖 Robot D</div>
 
 </div>
 
@@ -164,50 +208,34 @@ Train In Simulation. Deploy In Reality.
 
 <section>
 
-<h2 class="title">Fleet Universe</h2>
-
-<div class="grid">
-
-<div class="card">🤖 Humanoid Twin</div>
-
-<div class="card">🚁 Drone Twin</div>
-
-<div class="card">🏭 Factory Twin</div>
-
-<div class="card">📦 Warehouse Twin</div>
-
-<div class="card">🏥 Medical Twin</div>
-
-<div class="card">🛰 Rover Twin</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">AI Simulation Hub</h2>
+<h2 class="title">
+Robot Classes
+</h2>
 
 <div class="grid">
 
 <div class="card">
-<div class="metric">10K+</div>
-Virtual Missions
+🤖 Humanoid Unit
 </div>
 
 <div class="card">
-<div class="metric">500+</div>
-Robots
+🚁 Drone Network
 </div>
 
 <div class="card">
-<div class="metric">98%</div>
-Accuracy
+🏭 Factory Fleet
 </div>
 
 <div class="card">
-<div class="metric">24/7</div>
-Training
+🏥 Medical Assistant
+</div>
+
+<div class="card">
+🚓 Security Rover
+</div>
+
+<div class="card">
+📦 Warehouse Bot
 </div>
 
 </div>
@@ -216,21 +244,83 @@ Training
 
 <section>
 
-<h2 class="title">Research Areas</h2>
+<h2 class="title">
+Intelligence Dashboard
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>12,540</h2>
+<p>Active Robots</p>
+</div>
+
+<div class="stat">
+<h2>5.8M</h2>
+<p>AI Decisions</p>
+</div>
+
+<div class="stat">
+<h2>98M</h2>
+<p>Tasks Completed</p>
+</div>
+
+<div class="stat">
+<h2>99.4%</h2>
+<p>Success Rate</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Connected Learning
+</h2>
 
 <div class="grid">
 
-<div class="card">Digital Twins</div>
+<div class="card">
+Robot Learns Once
+</div>
+
+<div class="card">
+Knowledge Uploaded
+</div>
+
+<div class="card">
+Fleet Updated
+</div>
+
+<div class="card">
+Instant Improvement
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Research Center
+</h2>
+
+<div class="grid">
+
+<div class="card">Collective Learning</div>
 
 <div class="card">Embodied AI</div>
 
-<div class="card">Physical AI</div>
+<div class="card">Swarm Robotics</div>
 
-<div class="card">Robot Intelligence</div>
+<div class="card">Fleet Intelligence</div>
 
-<div class="card">Simulation Learning</div>
+<div class="card">Robot Networks</div>
 
-<div class="card">Multi-Agent Systems</div>
+<div class="card">Distributed AI</div>
 
 </div>
 
@@ -238,11 +328,11 @@ Training
 
 <footer>
 
-TwinSphere Robotics © 2026
+NeuroGrid Robotics © 2026
 
 <br><br>
 
-Train Virtually • Deploy Physically • Scale Globally
+Think Together • Learn Together • Work Together
 
 </footer>
 
