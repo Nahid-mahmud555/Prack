@@ -1,25 +1,38 @@
-# TwinSphere Robotics
+# NeuroGrid Robotics
 
-Every Robot Has A Digital Soul
+Where Every Robot Thinks Together
 
 ---
 
 ## Overview
 
-TwinSphere Robotics is a futuristic digital twin platform
-for robotics simulation, AI training, fleet monitoring,
-and autonomous deployment.
+NeuroGrid Robotics is a futuristic connected robotics platform.
+
+The system enables robots to share intelligence,
+learn collectively, and execute missions
+through a unified AI network.
 
 ---
 
-## Core Features
+## Features
 
-- Digital Twin Dashboard
-- AI Training Environment
-- Fleet Management
-- Simulation Hub
-- Real-Time Monitoring
-- Research Showcase
+- Connected Robotics
+- Fleet Intelligence
+- AI Coordination
+- Shared Learning
+- Mission Dashboard
+- Analytics Center
+
+---
+
+## Sections
+
+- Hero
+- AI Network
+- Robot Classes
+- Dashboard
+- Learning System
+- Research Center
 
 ---
 
@@ -34,27 +47,15 @@ Future:
 - Three.js
 - ROS2
 - TensorFlow
-- NVIDIA Isaac Sim
+- Edge AI
+- WebRTC
 
 ---
 
-## Modules
+## Vision
 
-- Twin Network
-- Fleet Universe
-- AI Simulation Hub
-- Reality Sync
-- Research Center
-
----
-
-## Future Roadmap
-
-- Live Robot Telemetry
-- Multi-Robot Control
-- Cloud Robotics
-- Physical AI Integration
-- Autonomous Deployment
+Build a world where robots collaborate
+as one intelligent network.
 
 ---
 
@@ -64,8 +65,8 @@ MIT License
 
 ---
 
-TwinSphere Robotics
+NeuroGrid Robotics
 
-Train Virtually.
-Deploy Physically.
-Scale Globally.
+Think Together.
+Learn Together.
+Work Together.
