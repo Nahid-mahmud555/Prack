@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NeuroGrid Robotics</title>
+<title>AetherCore Robotics</title>
 
 <style>
 
@@ -11,11 +11,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Inter,sans-serif;
 }
 
 body{
-background:#020617;
+background:#050816;
 color:white;
 overflow-x:hidden;
 }
@@ -28,40 +28,28 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-position:relative;
 }
 
-.network{
-position:absolute;
-width:500px;
-height:500px;
+.core{
+width:260px;
+height:260px;
 border-radius:50%;
-border:2px solid rgba(0,255,255,.2);
-animation:spin 20s linear infinite;
+background:
+conic-gradient(
+#00F5FF,
+#00FF99,
+#7B61FF,
+#00F5FF
+);
+
+animation:rotate 12s linear infinite;
+
+box-shadow:
+0 0 50px #00F5FF,
+0 0 120px #7B61FF;
 }
 
-.network::before,
-.network::after{
-content:"";
-position:absolute;
-width:20px;
-height:20px;
-background:#00F5FF;
-border-radius:50%;
-box-shadow:0 0 20px #00F5FF;
-}
-
-.network::before{
-top:40px;
-left:50%;
-}
-
-.network::after{
-bottom:40px;
-left:20%;
-}
-
-@keyframes spin{
+@keyframes rotate{
 100%{
 transform:rotate(360deg);
 }
@@ -69,8 +57,13 @@ transform:rotate(360deg);
 
 .hero h1{
 font-size:5rem;
-z-index:2;
-background:linear-gradient(90deg,#00F5FF,#7B61FF);
+margin-top:35px;
+background:
+linear-gradient(
+90deg,
+#00F5FF,
+#00FF99
+);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -78,9 +71,7 @@ background:linear-gradient(90deg,#00F5FF,#7B61FF);
 .hero p{
 margin-top:20px;
 max-width:700px;
-font-size:1.2rem;
-color:#cfcfcf;
-z-index:2;
+color:#bfbfbf;
 }
 
 .btn{
@@ -91,7 +82,6 @@ border-radius:50px;
 background:#00F5FF;
 font-weight:bold;
 cursor:pointer;
-z-index:2;
 }
 
 section{
@@ -113,10 +103,10 @@ gap:20px;
 
 .card{
 padding:25px;
-border-radius:20px;
 background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
+border-radius:20px;
 border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
 transition:.3s;
 }
 
@@ -125,41 +115,16 @@ transform:translateY(-10px);
 border-color:#00F5FF;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.stat{
-padding:30px;
-text-align:center;
-background:rgba(255,255,255,.05);
-border-radius:20px;
-}
-
-.stat h2{
+.metric{
 font-size:3rem;
-color:#22FF88;
-}
-
-.timeline{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.node{
-padding:20px;
-background:rgba(255,255,255,.05);
-border-radius:15px;
+font-weight:bold;
+color:#00FF99;
 }
 
 footer{
 padding:40px;
 text-align:center;
-color:#888;
+color:#777;
 }
 
 </style>
@@ -169,17 +134,18 @@ color:#888;
 
 <section class="hero">
 
-<div class="network"></div>
+<div class="core"></div>
 
-<h1>NEUROGRID</h1>
+<h1>AETHERCORE</h1>
 
 <p>
-The World's First Connected Robotics Network.
-Think Together. Learn Together. Work Together.
+Train robots in simulation.
+Validate with digital twins.
+Deploy with confidence.
 </p>
 
 <button class="btn">
-Join Network
+Launch Platform
 </button>
 
 </section>
@@ -187,55 +153,25 @@ Join Network
 <section>
 
 <h2 class="title">
-AI Network Architecture
-</h2>
-
-<div class="timeline">
-
-<div class="node">🤖 Robot A</div>
-
-<div class="node">🤖 Robot B</div>
-
-<div class="node">🧠 AI Cloud</div>
-
-<div class="node">🤖 Robot C</div>
-
-<div class="node">🤖 Robot D</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">
-Robot Classes
+Simulation Labs
 </h2>
 
 <div class="grid">
 
 <div class="card">
-🤖 Humanoid Unit
+🏭 Factory Simulator
 </div>
 
 <div class="card">
-🚁 Drone Network
+🚁 Drone Arena
 </div>
 
 <div class="card">
-🏭 Factory Fleet
+🏥 Medical Training
 </div>
 
 <div class="card">
-🏥 Medical Assistant
-</div>
-
-<div class="card">
-🚓 Security Rover
-</div>
-
-<div class="card">
-📦 Warehouse Bot
+🌍 Smart City Sandbox
 </div>
 
 </div>
@@ -245,57 +181,25 @@ Robot Classes
 <section>
 
 <h2 class="title">
-Intelligence Dashboard
-</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h2>12,540</h2>
-<p>Active Robots</p>
-</div>
-
-<div class="stat">
-<h2>5.8M</h2>
-<p>AI Decisions</p>
-</div>
-
-<div class="stat">
-<h2>98M</h2>
-<p>Tasks Completed</p>
-</div>
-
-<div class="stat">
-<h2>99.4%</h2>
-<p>Success Rate</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">
-Connected Learning
+AI Core Modules
 </h2>
 
 <div class="grid">
 
 <div class="card">
-Robot Learns Once
+👁 Vision Engine
 </div>
 
 <div class="card">
-Knowledge Uploaded
+🧠 Decision Brain
 </div>
 
 <div class="card">
-Fleet Updated
+🛰 Navigation System
 </div>
 
 <div class="card">
-Instant Improvement
+⚡ Motion Planner
 </div>
 
 </div>
@@ -305,22 +209,74 @@ Instant Improvement
 <section>
 
 <h2 class="title">
-Research Center
+Platform Metrics
 </h2>
 
 <div class="grid">
 
-<div class="card">Collective Learning</div>
+<div class="card">
+<div class="metric">
+2500+
+</div>
+Virtual Robots
+</div>
 
-<div class="card">Embodied AI</div>
+<div class="card">
+<div class="metric">
+50K+
+</div>
+Simulations
+</div>
 
-<div class="card">Swarm Robotics</div>
+<div class="card">
+<div class="metric">
+98.7%
+</div>
+Mission Accuracy
+</div>
 
-<div class="card">Fleet Intelligence</div>
+<div class="card">
+<div class="metric">
+24/7
+</div>
+Training
+</div>
 
-<div class="card">Robot Networks</div>
+</div>
 
-<div class="card">Distributed AI</div>
+</section>
+
+<section>
+
+<h2 class="title">
+Research Domains
+</h2>
+
+<div class="grid">
+
+<div class="card">
+Physical AI
+</div>
+
+<div class="card">
+Digital Twins
+</div>
+
+<div class="card">
+Robot Learning
+</div>
+
+<div class="card">
+Mission Autonomy
+</div>
+
+<div class="card">
+Fleet Intelligence
+</div>
+
+<div class="card">
+Embodied AI
+</div>
 
 </div>
 
@@ -328,11 +284,11 @@ Research Center
 
 <footer>
 
-NeuroGrid Robotics © 2026
+AetherCore Robotics © 2026
 
 <br><br>
 
-Think Together • Learn Together • Work Together
+From Simulation To Reality
 
 </footer>
 
