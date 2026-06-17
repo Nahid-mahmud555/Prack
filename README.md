@@ -1,61 +1,67 @@
-# NeuroGrid Robotics
+# AetherCore Robotics
 
-Where Every Robot Thinks Together
+From Simulation To Reality
 
 ---
 
 ## Overview
 
-NeuroGrid Robotics is a futuristic connected robotics platform.
+AetherCore Robotics is a futuristic robotics training platform
+where robots learn in simulation before deployment into the real world.
 
-The system enables robots to share intelligence,
-learn collectively, and execute missions
-through a unified AI network.
+The platform combines:
+
+- Physical AI
+- Simulation Training
+- Digital Twins
+- Mission Control
+- Robot Fleet Intelligence
 
 ---
 
 ## Features
 
-- Connected Robotics
-- Fleet Intelligence
-- AI Coordination
-- Shared Learning
-- Mission Dashboard
-- Analytics Center
+- AI Training Center
+- Simulation Environment
+- Fleet Dashboard
+- Digital Twin Engine
+- Robot Analytics
+- Research Hub
 
 ---
 
-## Sections
+## Core Modules
 
-- Hero
-- AI Network
-- Robot Classes
-- Dashboard
-- Learning System
-- Research Center
+- SimLab
+- TwinSync
+- Mission Engine
+- Fleet Network
+- AI Brain
 
 ---
 
-## Technologies
+## Technology Stack
 
-Frontend:
+Frontend
 - HTML5
 - CSS3
 - JavaScript
 
-Future:
+Future Integrations
 - Three.js
 - ROS2
 - TensorFlow
-- Edge AI
-- WebRTC
+- NVIDIA Isaac Sim
 
 ---
 
-## Vision
+## Future Roadmap
 
-Build a world where robots collaborate
-as one intelligent network.
+- Live Robot Monitoring
+- Cloud Robotics
+- Multi-Agent AI
+- Autonomous Missions
+- Real-Time Telemetry
 
 ---
 
@@ -65,8 +71,8 @@ MIT License
 
 ---
 
-NeuroGrid Robotics
+AetherCore Robotics
 
-Think Together.
-Learn Together.
-Work Together.
+Train Smart.
+Deploy Faster.
+Scale Globally.
