@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AetherCore Robotics</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Synapse City</title>
 
 <style>
 
@@ -11,11 +11,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter,sans-serif;
+font-family:system-ui;
 }
 
 body{
-background:#050816;
+background:#020617;
 color:white;
 overflow-x:hidden;
 }
@@ -23,65 +23,67 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
 padding:20px;
-}
-
-.core{
-width:260px;
-height:260px;
-border-radius:50%;
 background:
-conic-gradient(
-#00F5FF,
-#00FF99,
-#7B61FF,
-#00F5FF
-);
-
-animation:rotate 12s linear infinite;
-
-box-shadow:
-0 0 50px #00F5FF,
-0 0 120px #7B61FF;
+radial-gradient(circle at center,
+#0f172a,
+#020617);
 }
 
-@keyframes rotate{
-100%{
-transform:rotate(360deg);
+.city{
+width:320px;
+height:320px;
+position:relative;
 }
+
+.building{
+position:absolute;
+bottom:0;
+background:#00e5ff;
+box-shadow:0 0 20px #00e5ff;
+}
+
+.b1{
+left:20px;
+width:50px;
+height:180px;
+}
+
+.b2{
+left:90px;
+width:60px;
+height:250px;
+}
+
+.b3{
+left:170px;
+width:70px;
+height:140px;
+}
+
+.b4{
+left:260px;
+width:40px;
+height:220px;
 }
 
 .hero h1{
 font-size:5rem;
-margin-top:35px;
+margin-top:40px;
 background:
-linear-gradient(
-90deg,
-#00F5FF,
-#00FF99
-);
+linear-gradient(90deg,#00e5ff,#22ff88);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:20px;
 max-width:700px;
+margin-top:20px;
 color:#bfbfbf;
-}
-
-.btn{
-margin-top:30px;
-padding:15px 35px;
-border:none;
-border-radius:50px;
-background:#00F5FF;
-font-weight:bold;
-cursor:pointer;
 }
 
 section{
@@ -92,33 +94,33 @@ padding:100px 8%;
 font-size:3rem;
 text-align:center;
 margin-bottom:40px;
-color:#00F5FF;
+color:#00e5ff;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
 padding:25px;
-background:rgba(255,255,255,.05);
 border-radius:20px;
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-border-color:#00F5FF;
+border-color:#00e5ff;
 }
 
 .metric{
 font-size:3rem;
 font-weight:bold;
-color:#00FF99;
+color:#22ff88;
 }
 
 footer{
@@ -134,72 +136,46 @@ color:#777;
 
 <section class="hero">
 
-<div class="core"></div>
+<div class="city">
 
-<h1>AETHERCORE</h1>
+<div class="building b1"></div>
+<div class="building b2"></div>
+<div class="building b3"></div>
+<div class="building b4"></div>
+
+</div>
+
+<h1>SYNAPSE CITY</h1>
 
 <p>
-Train robots in simulation.
-Validate with digital twins.
-Deploy with confidence.
+A city powered entirely by robotics,
+automation and artificial intelligence.
 </p>
 
-<button class="btn">
-Launch Platform
-</button>
-
 </section>
 
 <section>
 
 <h2 class="title">
-Simulation Labs
+City Systems
 </h2>
 
 <div class="grid">
 
 <div class="card">
-🏭 Factory Simulator
+🚦 Smart Traffic
 </div>
 
 <div class="card">
-🚁 Drone Arena
+🚚 Robot Delivery
 </div>
 
 <div class="card">
-🏥 Medical Training
+🛡 Security Grid
 </div>
 
 <div class="card">
-🌍 Smart City Sandbox
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">
-AI Core Modules
-</h2>
-
-<div class="grid">
-
-<div class="card">
-👁 Vision Engine
-</div>
-
-<div class="card">
-🧠 Decision Brain
-</div>
-
-<div class="card">
-🛰 Navigation System
-</div>
-
-<div class="card">
-⚡ Motion Planner
+🏥 Healthcare Bots
 </div>
 
 </div>
@@ -209,37 +185,37 @@ AI Core Modules
 <section>
 
 <h2 class="title">
-Platform Metrics
+Live Statistics
 </h2>
 
 <div class="grid">
 
 <div class="card">
 <div class="metric">
-2500+
+45K
 </div>
-Virtual Robots
-</div>
-
-<div class="card">
-<div class="metric">
-50K+
-</div>
-Simulations
+Active Robots
 </div>
 
 <div class="card">
 <div class="metric">
-98.7%
+99.8%
 </div>
-Mission Accuracy
+Efficiency
+</div>
+
+<div class="card">
+<div class="metric">
+8M
+</div>
+Daily Tasks
 </div>
 
 <div class="card">
 <div class="metric">
 24/7
 </div>
-Training
+Operation
 </div>
 
 </div>
@@ -249,33 +225,33 @@ Training
 <section>
 
 <h2 class="title">
-Research Domains
+Infrastructure
 </h2>
 
 <div class="grid">
 
 <div class="card">
-Physical AI
+Energy Network
 </div>
 
 <div class="card">
-Digital Twins
+Transportation Grid
 </div>
 
 <div class="card">
-Robot Learning
+AI Governance
 </div>
 
 <div class="card">
-Mission Autonomy
+Autonomous Maintenance
 </div>
 
 <div class="card">
-Fleet Intelligence
+Logistics Core
 </div>
 
 <div class="card">
-Embodied AI
+Emergency Response
 </div>
 
 </div>
@@ -284,11 +260,11 @@ Embodied AI
 
 <footer>
 
-AetherCore Robotics © 2026
+Synapse City © 2026
 
 <br><br>
 
-From Simulation To Reality
+The Future Lives Here
 
 </footer>
 
