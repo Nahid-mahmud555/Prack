@@ -1,67 +1,62 @@
-# AetherCore Robotics
+# Synapse City
 
-From Simulation To Reality
+A City Where Robots Run Everything
 
 ---
 
 ## Overview
 
-AetherCore Robotics is a futuristic robotics training platform
-where robots learn in simulation before deployment into the real world.
+Synapse City is a futuristic autonomous city
+powered entirely by robotic intelligence.
 
-The platform combines:
+The platform demonstrates how AI and robotics
+can manage transportation, logistics,
+security, healthcare and urban infrastructure.
 
-- Physical AI
-- Simulation Training
-- Digital Twins
-- Mission Control
-- Robot Fleet Intelligence
+---
+
+## Core Systems
+
+- Robot Traffic Control
+- Autonomous Delivery
+- Smart Healthcare
+- Security Network
+- City Maintenance
+- AI Governance
 
 ---
 
 ## Features
 
-- AI Training Center
-- Simulation Environment
-- Fleet Dashboard
-- Digital Twin Engine
-- Robot Analytics
-- Research Hub
-
----
-
-## Core Modules
-
-- SimLab
-- TwinSync
-- Mission Engine
-- Fleet Network
-- AI Brain
+- Futuristic Smart City UI
+- Live City Dashboard
+- Robot Activity Monitoring
+- Infrastructure Analytics
+- AI Decision Center
+- Urban Intelligence Hub
 
 ---
 
 ## Technology Stack
 
-Frontend
+Frontend:
 - HTML5
 - CSS3
 - JavaScript
 
-Future Integrations
+Future:
 - Three.js
 - ROS2
 - TensorFlow
-- NVIDIA Isaac Sim
+- Edge AI
+- Smart Sensors
 
 ---
 
-## Future Roadmap
+## Vision
 
-- Live Robot Monitoring
-- Cloud Robotics
-- Multi-Agent AI
-- Autonomous Missions
-- Real-Time Telemetry
+Create the world's first
+fully autonomous robotic city.
 
 ---
 
@@ -71,8 +66,6 @@ MIT License
 
 ---
 
-AetherCore Robotics
+Synapse City
 
-Train Smart.
-Deploy Faster.
-Scale Globally.
+The Future Lives Here.
