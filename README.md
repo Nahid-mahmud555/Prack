@@ -1,43 +1,44 @@
-# Synapse City
+# ARK-01
 
-A City Where Robots Run Everything
+The First Autonomous Colony System
 
 ---
 
 ## Overview
 
-Synapse City is a futuristic autonomous city
-powered entirely by robotic intelligence.
+ARK-01 is a futuristic autonomous colony platform.
 
-The platform demonstrates how AI and robotics
-can manage transportation, logistics,
-security, healthcare and urban infrastructure.
+Designed for Mars colonies, lunar bases,
+remote industrial zones and fully automated settlements.
 
----
-
-## Core Systems
-
-- Robot Traffic Control
-- Autonomous Delivery
-- Smart Healthcare
-- Security Network
-- City Maintenance
-- AI Governance
+ARK-01 coordinates thousands of robots
+through a centralized intelligence network.
 
 ---
 
 ## Features
 
-- Futuristic Smart City UI
-- Live City Dashboard
-- Robot Activity Monitoring
-- Infrastructure Analytics
-- AI Decision Center
-- Urban Intelligence Hub
+- Colony Command Center
+- Autonomous Construction
+- Robotic Farming
+- Exploration Network
+- Energy Grid
+- Logistics Management
 
 ---
 
-## Technology Stack
+## Modules
+
+- Colony Core
+- Energy Nexus
+- BuildNet
+- AgroBot
+- Explorer Fleet
+- Security Grid
+
+---
+
+## Technology
 
 Frontend:
 - HTML5
@@ -45,18 +46,18 @@ Frontend:
 - JavaScript
 
 Future:
-- Three.js
 - ROS2
+- Three.js
 - TensorFlow
 - Edge AI
-- Smart Sensors
+- Satellite Communication
 
 ---
 
 ## Vision
 
 Create the world's first
-fully autonomous robotic city.
+fully autonomous robotic colony.
 
 ---
 
@@ -66,6 +67,6 @@ MIT License
 
 ---
 
-Synapse City
+ARK-01
 
-The Future Lives Here.
+Build Beyond Earth.
