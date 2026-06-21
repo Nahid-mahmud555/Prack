@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Synapse City</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARK-01</title>
 
 <style>
 
@@ -11,11 +11,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:system-ui;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#020617;
+background:#030712;
 color:white;
 overflow-x:hidden;
 }
@@ -23,59 +23,42 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 padding:20px;
+}
+
+.planet{
+width:280px;
+height:280px;
+border-radius:50%;
 background:
-radial-gradient(circle at center,
-#0f172a,
-#020617);
+radial-gradient(circle at 30% 30%,
+#ff9f43,
+#ff6b00,
+#6b2d00);
+box-shadow:
+0 0 60px #ff6b00;
+animation:float 5s ease-in-out infinite;
 }
 
-.city{
-width:320px;
-height:320px;
-position:relative;
+@keyframes float{
+50%{
+transform:translateY(-20px);
 }
-
-.building{
-position:absolute;
-bottom:0;
-background:#00e5ff;
-box-shadow:0 0 20px #00e5ff;
-}
-
-.b1{
-left:20px;
-width:50px;
-height:180px;
-}
-
-.b2{
-left:90px;
-width:60px;
-height:250px;
-}
-
-.b3{
-left:170px;
-width:70px;
-height:140px;
-}
-
-.b4{
-left:260px;
-width:40px;
-height:220px;
 }
 
 .hero h1{
 font-size:5rem;
 margin-top:40px;
 background:
-linear-gradient(90deg,#00e5ff,#22ff88);
+linear-gradient(
+90deg,
+#ff9f43,
+#ffd166
+);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -83,7 +66,7 @@ linear-gradient(90deg,#00e5ff,#22ff88);
 .hero p{
 max-width:700px;
 margin-top:20px;
-color:#bfbfbf;
+color:#bbb;
 }
 
 section{
@@ -94,7 +77,7 @@ padding:100px 8%;
 font-size:3rem;
 text-align:center;
 margin-bottom:40px;
-color:#00e5ff;
+color:#ff9f43;
 }
 
 .grid{
@@ -106,21 +89,21 @@ gap:20px;
 
 .card{
 padding:25px;
-border-radius:20px;
 background:rgba(255,255,255,.05);
+border-radius:20px;
 border:1px solid rgba(255,255,255,.08);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-border-color:#00e5ff;
+border-color:#ff9f43;
 }
 
 .metric{
 font-size:3rem;
 font-weight:bold;
-color:#22ff88;
+color:#ffd166;
 }
 
 footer{
@@ -136,20 +119,13 @@ color:#777;
 
 <section class="hero">
 
-<div class="city">
+<div class="planet"></div>
 
-<div class="building b1"></div>
-<div class="building b2"></div>
-<div class="building b3"></div>
-<div class="building b4"></div>
-
-</div>
-
-<h1>SYNAPSE CITY</h1>
+<h1>ARK-01</h1>
 
 <p>
-A city powered entirely by robotics,
-automation and artificial intelligence.
+Autonomous colonies powered by robotics,
+artificial intelligence and planetary-scale automation.
 </p>
 
 </section>
@@ -157,25 +133,25 @@ automation and artificial intelligence.
 <section>
 
 <h2 class="title">
-City Systems
+Colony Systems
 </h2>
 
 <div class="grid">
 
 <div class="card">
-🚦 Smart Traffic
+⚡ Energy Nexus
 </div>
 
 <div class="card">
-🚚 Robot Delivery
+🏗 BuildNet
 </div>
 
 <div class="card">
-🛡 Security Grid
+🌱 AgroBot
 </div>
 
 <div class="card">
-🏥 Healthcare Bots
+🛰 Explorer Fleet
 </div>
 
 </div>
@@ -185,30 +161,30 @@ City Systems
 <section>
 
 <h2 class="title">
-Live Statistics
+Colony Metrics
 </h2>
 
 <div class="grid">
 
 <div class="card">
 <div class="metric">
-45K
+12,500
 </div>
 Active Robots
 </div>
 
 <div class="card">
 <div class="metric">
-99.8%
+98.9%
 </div>
 Efficiency
 </div>
 
 <div class="card">
 <div class="metric">
-8M
+450
 </div>
-Daily Tasks
+Structures Built
 </div>
 
 <div class="card">
@@ -225,34 +201,22 @@ Operation
 <section>
 
 <h2 class="title">
-Infrastructure
+Mission Areas
 </h2>
 
 <div class="grid">
 
-<div class="card">
-Energy Network
-</div>
+<div class="card">Mars Colony</div>
 
-<div class="card">
-Transportation Grid
-</div>
+<div class="card">Moon Base</div>
 
-<div class="card">
-AI Governance
-</div>
+<div class="card">Mining Sector</div>
 
-<div class="card">
-Autonomous Maintenance
-</div>
+<div class="card">Research Station</div>
 
-<div class="card">
-Logistics Core
-</div>
+<div class="card">Agricultural Dome</div>
 
-<div class="card">
-Emergency Response
-</div>
+<div class="card">Logistics Hub</div>
 
 </div>
 
@@ -260,11 +224,11 @@ Emergency Response
 
 <footer>
 
-Synapse City © 2026
+ARK-01 © 2026
 
 <br><br>
 
-The Future Lives Here
+Build Beyond Earth
 
 </footer>
 
